@@ -1,0 +1,46 @@
+/*
+*    File Name  : Calendar.css
+*    Author     : Joseph Schell
+*    Date       : 12/18/2018
+*/
+#customerButton
+{
+    -fx-background-color: linear-gradient(#FF3701,#313131); 
+    -fx-background-radius: 10; 
+    -fx-font-weight: bold; -fx-text-fill: #FFFFFF;
+}
+
+#reportButton
+{
+    -fx-background-color: linear-gradient(#FF3701,#313131); 
+    -fx-background-radius: 10; 
+    -fx-font-weight: bold; -fx-text-fill: #FFFFFF;
+}
+
+#viewComboBox
+{
+    -fx-background-color: #FFFFFF; 
+    -fx-border-color: #555555; 
+    -fx-border-radius: 3;
+}
+
+#addButton
+{
+    -fx-background-color: linear-gradient(#FF3701,#313131); 
+    -fx-background-radius: 10; 
+    -fx-font-weight: bold; -fx-text-fill: #FFFFFF;
+}
+
+#editButton
+{
+    -fx-background-color: linear-gradient(#FF3701,#313131); 
+    -fx-background-radius: 10; 
+    -fx-font-weight: bold; -fx-text-fill: #FFFFFF;
+}
+
+#deleteButton
+{
+    -fx-background-color: linear-gradient(#FF3701,#313131); 
+    -fx-background-radius: 10; 
+    -fx-font-weight: bold; -fx-text-fill: #FFFFFF;
+}
