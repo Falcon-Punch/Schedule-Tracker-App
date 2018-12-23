@@ -45,7 +45,7 @@ public class ScheduleTrackerApp extends Application
     private void displayCalendar() throws IOException
     {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(ScheduleTrackerApp.class.getResource("view_controller/Calendar.fxml"));
+        loader.setLocation(ScheduleTrackerApp.class.getResource("view/Calendar.fxml"));
         calendarDisplay = (BorderPane) loader.load();
 
         CalendarController calendarController = loader.getController();

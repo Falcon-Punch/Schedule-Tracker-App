@@ -1,0 +1,25 @@
+/*
+*    File Name  : Customer.css
+*    Author     : Joseph Schell
+*    Date       : 12/24/2018
+*/
+#addButton
+{
+    -fx-background-color: linear-gradient(#FF3701,#313131); 
+    -fx-background-radius: 10; 
+    -fx-font-weight: bold; -fx-text-fill: #FFFFFF;
+}
+
+#editButton
+{
+    -fx-background-color: linear-gradient(#FF3701,#313131); 
+    -fx-background-radius: 10; 
+    -fx-font-weight: bold; -fx-text-fill: #FFFFFF;
+}
+
+#deleteButton
+{
+    -fx-background-color: linear-gradient(#FF3701,#313131); 
+    -fx-background-radius: 10; 
+    -fx-font-weight: bold; -fx-text-fill: #FFFFFF;
+}

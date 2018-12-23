@@ -362,7 +362,7 @@ public class CalendarController
     @FXML private void customerButtonClicked() throws IOException, 
             ClassNotFoundException, ParseException
     {
-        //CustomerController.showUI(stage, connection, userName);
+        CustomerController.showUI(stage, connection, userName);
         fillTable(false);
     }
 

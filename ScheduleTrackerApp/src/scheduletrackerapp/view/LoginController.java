@@ -207,7 +207,7 @@ public class LoginController
         ResourceBundle resourceBundle = ResourceBundle.getBundle("locales/scheduler");
 
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(ScheduleTrackerApp.class.getResource("view_controller/Login.fxml"));
+        loader.setLocation(ScheduleTrackerApp.class.getResource("view/Login.fxml"));
         AnchorPane page = (AnchorPane) loader.load();
 
         Stage stage = new Stage();
