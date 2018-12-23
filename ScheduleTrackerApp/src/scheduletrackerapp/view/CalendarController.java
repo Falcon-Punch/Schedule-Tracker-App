@@ -1,7 +1,7 @@
 /*
 *    File Name  : CalendarController.java
 *    Author     : Joseph Schell
-*    Date       : 12/18/2018
+*    Date       : 12/20/2018
 */
 package scheduletrackerapp.view;
 
