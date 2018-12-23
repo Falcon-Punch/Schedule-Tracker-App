@@ -390,6 +390,6 @@ public class CalendarController
 
     @FXML private void reportButtonClicked() throws IOException
     {
-        //ReportsController.showUI(stage, connection);
+        ReportsController.showUI(stage, connection);
     }
 }

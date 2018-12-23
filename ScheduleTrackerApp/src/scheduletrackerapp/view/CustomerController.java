@@ -219,8 +219,8 @@ public class CustomerController
             }
             else
             {
-                //EditCustomerController.showUI(stage, connection, 
-                        //customer, "Modify Customer", userName);
+                EditCustomerController.showUI(stage, connection, 
+                        customer, "Modify Customer", userName);
             }
             updateCustomers();
         } 
@@ -237,7 +237,7 @@ public class CustomerController
     */
     @FXML private void addButtonClicked() throws IOException, ClassNotFoundException
     {
-        ///EditCustomerController.showUI(stage, connection, null, "Add Customer", userName);
+        EditCustomerController.showUI(stage, connection, null, "Add Customer", userName);
         updateCustomers();
     }
      

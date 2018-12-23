@@ -565,7 +565,7 @@ public class AppointmentController
     {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(ScheduleTrackerApp.class.getResource(
-                "view_controller/Appointment.fxml"));
+                "view/Appointment.fxml"));
         AnchorPane page = (AnchorPane) loader.load();
 
         Stage stage = new Stage();

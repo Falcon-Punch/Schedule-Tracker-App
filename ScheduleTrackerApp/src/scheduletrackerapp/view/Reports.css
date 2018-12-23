@@ -1,0 +1,25 @@
+/*
+*    File Name  : Reports.css
+*    Author     : Joseph Schell
+*    Date       : 12/24/2018
+*/
+#typeComboBox
+{
+    -fx-background-color: #FFFFFF; 
+    -fx-border-color: #555555; 
+    -fx-border-radius: 3;
+}
+
+#personComboBox
+{
+    -fx-background-color: #FFFFFF; 
+    -fx-border-color: #555555; 
+    -fx-border-radius: 3;
+}
+
+#generateButton
+{
+    -fx-background-color: linear-gradient(#FF3701,#313131); 
+    -fx-background-radius: 10; 
+    -fx-font-weight: bold; -fx-text-fill: #FFFFFF;
+}
