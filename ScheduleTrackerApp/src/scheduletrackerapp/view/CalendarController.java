@@ -231,8 +231,6 @@ public class CalendarController
     @FXML private void comboBoxClicked() throws ParseException
     {
         String boxSelection = viewComboBox.getValue();
-        //int week = (Calendar.DAY_OF_YEAR + 7);
-        //int month = (Calendar.MONTH + 1);
                 
         if(null == boxSelection)
         {
@@ -364,7 +362,7 @@ public class CalendarController
     @FXML private void customerButtonClicked() throws IOException, 
             ClassNotFoundException, ParseException
     {
-        CustomerController.showUI(stage, connection, userName);
+        //CustomerController.showUI(stage, connection, userName);
         fillTable(false);
     }
 
@@ -392,6 +390,6 @@ public class CalendarController
 
     @FXML private void reportButtonClicked() throws IOException
     {
-        ReportsController.showUI(stage, connection);
+        //ReportsController.showUI(stage, connection);
     }
 }

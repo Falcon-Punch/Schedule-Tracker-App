@@ -1,0 +1,34 @@
+/*
+*    File Name  : Login.css
+*    Author     : Joseph Schell
+*    Date       : 12/23/2018
+*/
+#usernameTextField
+{
+    -fx-background-color: #EFEFEF; 
+    -fx-background-radius: 3; 
+    -fx-border-color: #FF3701; 
+    -fx-border-radius: 3;
+}
+
+#passwordField
+{
+    -fx-background-color: #EFEFEF; 
+    -fx-background-radius: 3; 
+    -fx-border-color: #FF3701; 
+    -fx-border-radius: 3;
+}
+
+#loginButton
+{
+    -fx-background-color: linear-gradient(#FF3701,#313131); 
+    -fx-background-radius: 10; 
+    -fx-font-weight: bold; -fx-text-fill: #FFFFFF;
+}
+
+#exitButton
+{
+    -fx-background-color: linear-gradient(#FF3701,#313131); 
+    -fx-background-radius: 10; 
+    -fx-font-weight: bold; -fx-text-fill: #FFFFFF;
+}
