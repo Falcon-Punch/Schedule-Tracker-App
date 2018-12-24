@@ -64,7 +64,7 @@ public class CalendarController
         customerTableColumn.setCellValueFactory(cellData -> cellData.getValue().customerNameProperty());
         consultantTableColumn.setCellValueFactory(cellData -> cellData.getValue().userNameProperty());
 
-        viewComboBox.getItems().addAll("All", "Week", "Month");
+        viewComboBox.getItems().addAll("All", "Next 7 Days", "Next 30 Days");
         viewComboBox.getSelectionModel().select(0);
 
         Calendar cal = Calendar.getInstance();
@@ -238,11 +238,11 @@ public class CalendarController
         } 
         else switch (boxSelection)
         {
-            case "Month":
+            case "Next 30 Days":
                 calendar.clear();
                 fillComboSelection(false);
                 break;
-            case "Week":
+            case "Next 7 Days":
                 calendar.clear();
                 fillComboSelection(true);
                 break;
