@@ -340,6 +340,28 @@ public class CalendarController
             MessageAlert.noSelectionAlert("appointment");
         }
     }
+        
+    /*
+    *   Provides response for when the Customers button is clicked.
+    *
+    *   @param: none
+    */
+    @FXML private void customerButtonClicked() throws IOException, 
+            ClassNotFoundException, ParseException
+    {
+        CustomerController.showUI(stage, connection, userName);
+        fillTable(false);
+    }
+    
+    /*
+    *   Provides response for when the Reports button is clicked.
+    *
+    *   @param: none
+    */
+    @FXML private void reportButtonClicked() throws IOException
+    {
+        ReportsController.showUI(stage, connection);
+    }
     
     /*
     *   Provides response for when the Add button is clicked.
@@ -355,15 +377,14 @@ public class CalendarController
     }
     
     /*
-    *   Provides response for when the Customer button is clicked.
+    *   Provides response for when the Edit button is clicked.
     *
     *   @param: none
     */
-    @FXML private void customerButtonClicked() throws IOException, 
+    @FXML private void editButtonClicked() throws IOException, 
             ClassNotFoundException, ParseException
     {
-        CustomerController.showUI(stage, connection, userName);
-        fillTable(false);
+        handleButton(false);
     }
 
     /*
@@ -378,18 +399,13 @@ public class CalendarController
     }
     
     /*
-    *   Provides response for when the Edit button is clicked.
+    *   Provides response for when the Exit button is clicked.
     *
     *   @param: none
     */
-    @FXML private void editButtonClicked() throws IOException, 
-            ClassNotFoundException, ParseException
+    @FXML private void exitButtonClicked() throws ParseException, 
+            IOException, ClassNotFoundException
     {
-        handleButton(false);
-    }
-
-    @FXML private void reportButtonClicked() throws IOException
-    {
-        ReportsController.showUI(stage, connection);
+        stage.close();
     }
 }

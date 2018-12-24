@@ -5,7 +5,7 @@
 */
 #usernameTextField
 {
-    -fx-background-color: #EFEFEF; 
+    -fx-background-color: #FFF3EE; 
     -fx-background-radius: 3; 
     -fx-border-color: #FF3701; 
     -fx-border-radius: 3;
@@ -13,7 +13,7 @@
 
 #passwordField
 {
-    -fx-background-color: #EFEFEF; 
+    -fx-background-color: #FFF3EE; 
     -fx-background-radius: 3; 
     -fx-border-color: #FF3701; 
     -fx-border-radius: 3;
@@ -21,7 +21,7 @@
 
 #loginButton
 {
-    -fx-background-color: linear-gradient(#FF3701,#313131); 
+    -fx-background-color: linear-gradient(#03BFE3,#313131); 
     -fx-background-radius: 10; 
     -fx-font-weight: bold; -fx-text-fill: #FFFFFF;
 }

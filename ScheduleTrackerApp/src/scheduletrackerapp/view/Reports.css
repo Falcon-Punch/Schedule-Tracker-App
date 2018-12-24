@@ -19,7 +19,7 @@
 
 #generateButton
 {
-    -fx-background-color: linear-gradient(#FF3701,#313131); 
+    -fx-background-color: linear-gradient(#03BFE3,#313131); 
     -fx-background-radius: 10; 
     -fx-font-weight: bold; -fx-text-fill: #FFFFFF;
 }
