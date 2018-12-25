@@ -76,7 +76,7 @@ public class CalendarController
         connectToDB();
 
         // Fill table with data
-        fillTable(true);
+        fillTable(true, false, false);
 
         userName = LoginController.showUI(stage, connection);
         
@@ -120,8 +120,11 @@ public class CalendarController
     *   Fills calendar table with data from Database
     *
     *   @param: boolean init
-    */
-    private void fillTable(boolean init) throws ParseException
+    *           boolean week
+    *           boolean month
+    */    
+    private void fillTable(boolean init, boolean week, boolean month) 
+            throws ParseException
     {
         ResultSet resultSet = getAppointmentsFromDB();
         calendar.clear();
@@ -146,10 +149,12 @@ public class CalendarController
                 Appointment appointment = new Appointment(appointmentID, start, 
                         title, type, customerName, customerID, username, userId, 
                         description, location, contact, URL, end);
-                calendar.add(appointment);
                 
                 if(init)
                 {
+                    // Program opens for first time
+                    calendar.add(appointment);
+                    
                     if(reminder.equals(""))
                     {
                         if(DateTime.checkFifteenMinutes(today, start))
@@ -158,61 +163,26 @@ public class CalendarController
                             reminder = "You have a meeting at " + parts[1] + " (Today!)";
                         }
                     }
-                }
-            }
-            calendarTableView.setItems(calendar);             
-        }
-        catch(SQLException ex)
-        {
-            Logger.getLogger(CalendarController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
-   
-    /*
-    *   Fills calendar table with data from Database, after combo box selection
-    *
-    *   @param: boolean init
-    */
-    private void fillComboSelection(boolean init) throws ParseException
-    {
-        ResultSet resultSet = getAppointmentsFromDB();
-        calendar.clear();
-        
-        try
-        {
-            while (resultSet.next())
-            {
-                int appointmentID = resultSet.getInt("appointmentid");
-                String start = DateTime.setDateLocal(resultSet.getString("start"));
-                String title = resultSet.getString("title");
-                String type = resultSet.getString("type");
-                String customerName = resultSet.getString("customerName");
-                int customerID = resultSet.getInt("customerId");
-                String username = resultSet.getString("userName");
-                int userId = resultSet.getInt("userId");
-                String description = resultSet.getString("description");
-                String location = resultSet.getString("location");
-                String contact = resultSet.getString("contact");
-                String URL = resultSet.getString("url");
-                String end = DateTime.setDateLocal(resultSet.getString("end"));
-                Appointment appointment = new Appointment(appointmentID, start, 
-                        title, type, customerName, customerID, username, userId, 
-                        description, location, contact, URL, end);
-                
-                
-                if(init)
+                }     
+                else if(week)
                 {
+                    // Combo box filters appointments to only display within 7 days
                     if(DateTime.checkWeek(today, start))
+                    {
+                        calendar.add(appointment);
+                    }
+                }
+                else if(month)
+                {
+                    // Combo box filters appointments to only display within 30 days
+                    if(DateTime.checkMonth(today, start))
                     {
                         calendar.add(appointment);
                     }
                 }
                 else
                 {
-                    if(DateTime.checkMonth(today, start))
-                    {
-                        calendar.add(appointment);
-                    }
+                    calendar.add(appointment);
                 }
             }
             calendarTableView.setItems(calendar);             
@@ -234,20 +204,21 @@ public class CalendarController
                 
         if(null == boxSelection)
         {
-            fillTable(true);
+            fillTable(true, false, false);
         } 
         else switch (boxSelection)
         {
             case "Next 30 Days":
                 calendar.clear();
-                fillComboSelection(false);
+                fillTable(false, false, true);
                 break;
             case "Next 7 Days":
                 calendar.clear();
-                fillComboSelection(true);
+                fillTable(false, true, false);
                 break;
             default:
-                fillTable(true);
+                // Check for closing add tab
+                fillTable(true, false, false);
                 break;
         }
     }
@@ -333,7 +304,7 @@ public class CalendarController
                 AppointmentController.showUI(stage, connection, appointment, 
                         "Edit Appointment", userName);
             }
-            fillTable(false);
+            fillTable(false, false, false);
         } 
         else 
         {
@@ -350,7 +321,7 @@ public class CalendarController
             ClassNotFoundException, ParseException
     {
         CustomerController.showUI(stage, connection, userName);
-        fillTable(false);
+        fillTable(false, false, false);
     }
     
     /*
@@ -373,7 +344,7 @@ public class CalendarController
     {
         AppointmentController.showUI(stage, connection, null, 
                 "Add Appointment", userName);
-        fillTable(false);
+        fillTable(false, false, false);
     }
     
     /*
